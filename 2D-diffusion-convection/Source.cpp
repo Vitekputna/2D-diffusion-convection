@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-#include "matrix.h"
+#include "data.h"
 
 const double k = 1;
 const double dx = 0.01;
@@ -22,9 +22,9 @@ std::string name = "data.txt";
 
 int main()
 {
-	matrix<double> phi(x_size, y_size);
-	matrix<double> u(x_size, y_size);
-	matrix<double> x(1, x_size);
+	data phi(x_size, y_size);
+	data u(x_size, y_size);
+	data x(1, x_size);
 
 	for (int i = 0; i < x_size; i++)
 	{
@@ -61,4 +61,5 @@ int main()
 		}
 	}
 	phi.print_to_file(name);
+	std::cout << "Done..." << std::endl;
 }
