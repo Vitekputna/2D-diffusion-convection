@@ -16,18 +16,17 @@ public:
 	~data();
 	data(const data& other);
 
-	//void operator=(data& other);
-	//std::shared_ptr<data> operator+(data& other);
-	//std::shared_ptr<data> operator*(double scalar);
+	void operator=(data& other);
+	std::shared_ptr<data> operator+(data& other);
+	std::shared_ptr<data> operator*(double scalar);
 
 	double& get(int row, int collum);
+	double& operator()(int Row, int Col);
+	double& operator()(int Col);
 
-	//std::shared_ptr<data> collum(int collum);
-	//std::shared_ptr<data> row(int row);
-	//void boundary(const char site, data& BC);
+	std::shared_ptr<data> collum(int collum);
+	std::shared_ptr<data> row(int row);
 
-	void print_to_file(int num_rows);
+	void print_to_file();
 	void print_to_file(std::string path);
-
-	//friend void W_2_variables(data& W, int t);
 };
